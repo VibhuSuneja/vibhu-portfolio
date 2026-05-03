@@ -1,0 +1,152 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Play } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon, YouTubeIcon, InstagramIcon } from '@/components/Icons';
+import Image from 'next/image';
+
+const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 15, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Background Effects */}
+      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#c8f564]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 noise" />
+
+      <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+        
+        {/* Left Column */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="md:col-span-7 flex flex-col items-start"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-2.5 mb-6">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c8f564] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8f564]"></span>
+            </span>
+            <span className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] font-medium">
+              available for work
+            </span>
+          </motion.div>
+
+          <motion.h1 variants={itemVariants} className="text-[44px] md:text-[64px] font-semibold text-[#f0f0f0] leading-[1.05] tracking-tight mb-7">
+            Engineering ideas <br />
+            into <span className="font-serif italic text-white/60">scalable</span> reality.
+          </motion.h1>
+
+          <motion.p variants={itemVariants} className="text-[15px] md:text-[16px] text-white/40 font-light max-w-[460px] leading-relaxed mb-9">
+            NIDU Researcher & MERN Stack Developer. Lead Developer of AgrowCart. Specialized in building AI-integrated platforms, agentic systems, and premium digital experiences.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-5 mb-10">
+            <a 
+              href="mailto:vibhusun01@gmail.com"
+              className="bg-white text-black font-medium rounded-full px-8 py-3.5 text-[14px] flex items-center gap-2 hover:bg-[#c8f564] transition-all duration-300"
+            >
+              Get In Touch <ArrowUpRight size={18} />
+            </a>
+            <a 
+              href="https://drive.google.com/file/d/18sp2AiBCeTS5gUcXAHrTZdMY015MQTWH/view?usp=drive_link" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-white transition-colors flex items-center gap-2 text-[14px] group"
+            >
+              <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                <Play size={12} fill="currentColor" />
+              </div>
+              Watch Video Resume ↗
+            </a>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="flex items-center gap-6">
+            <a href="https://github.com/VibhuSuneja" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#c8f564] transition-colors" title="GitHub">
+              <GitHubIcon size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/vibhusuneja08" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#c8f564] transition-colors" title="LinkedIn">
+              <LinkedInIcon size={20} />
+            </a>
+            <a href="https://youtube.com/@igneous.editzz_" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#c8f564] transition-colors" title="YouTube">
+              <YouTubeIcon size={20} />
+            </a>
+            <a href="https://www.instagram.com/o_.vibhu._o" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#c8f564] transition-colors" title="Instagram">
+              <InstagramIcon size={20} />
+            </a>
+          </motion.div>
+        </motion.div>
+
+        {/* Right Column */}
+        <motion.div 
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="md:col-span-5 hidden md:block"
+        >
+          <div className="relative">
+            <div className="bg-[#111] border border-white/5 rounded-[32px] p-4 group">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-[#1a1a1a]">
+                <Image 
+                  src="/images/profile.jpg"
+                  alt="Vibhu Suneja"
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  priority
+                />
+                
+                {/* Status Badge */}
+                <div className="absolute top-5 right-5 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c8f564]"></span>
+                  <span className="text-[10px] text-white/80 font-medium uppercase tracking-wider">Online</span>
+                </div>
+              </div>
+              
+              <div className="mt-6 px-2 pb-2">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-[14px] font-medium text-white/90">Vibhu Suneja</h3>
+                  <span className="text-[11px] text-white/30">MERN Specialist</span>
+                </div>
+                <div className="text-[12px] text-white/40 leading-relaxed">
+                  Focusing on Full-Stack Scalability & AI Engineering. Currently based in Punjab, India.
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute -bottom-6 -left-6 bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-2xl hidden lg:block">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#c8f564] flex items-center justify-center text-black font-bold">15+</div>
+                <div className="text-[11px] text-white/60">Technical Projects <br />Completed</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+
