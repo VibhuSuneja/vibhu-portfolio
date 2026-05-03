@@ -16,7 +16,7 @@ const Hero = () => {
         delayChildren: 0.2,
       },
     },
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { y: 15, opacity: 0 },
@@ -25,7 +25,7 @@ const Hero = () => {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  } as const;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
