@@ -8,19 +8,44 @@
 
 :root {
   --bg-primary: #080808;
-  --bg-surface: #101010;
+  --bg-secondary: #0c0c0c;
+  --bg-surface: #121212;
   --bg-card: #141414;
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-default: rgba(255, 255, 255, 0.10);
-  --text-primary: #f0f0f0;
-  --text-secondary: #888888;
-  --text-muted: #444444;
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #525252;
   --accent: #c8f564;
+  --accent-foreground: #000000;
+}
+
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-surface: #f1f1f1;
+  --bg-card: #ffffff;
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-default: rgba(0, 0, 0, 0.08);
+  --text-primary: #0a0a0a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #8a8a8a;
+  --accent: #87b227; /* Slightly darker accent for light mode readability */
+  --accent-foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--bg-primary);
-  --color-foreground: var(--text-primary);
+  --color-secondary: var(--bg-secondary);
+  --color-surface: var(--bg-surface);
+  --color-card: var(--bg-card);
+  --color-primary-text: var(--text-primary);
+  --color-secondary-text: var(--text-secondary);
+  --color-muted-text: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-default: var(--border-default);
+  
   --font-sans: var(--font-sora);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);

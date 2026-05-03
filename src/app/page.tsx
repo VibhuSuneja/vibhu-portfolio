@@ -9,10 +9,11 @@ import Certifications from "@/components/Certifications";
 import Leadership from "@/components/Leadership";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#080808] min-h-screen">
+    <main className="relative bg-background min-h-screen">
       <Navbar />
       <Hero />
       <Projects />
@@ -24,6 +25,7 @@ export default function Home() {
       <Leadership />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }

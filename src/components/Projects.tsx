@@ -49,16 +49,16 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
             <SectionLabel text="Projects" />
-            <h2 className="text-[36px] md:text-[48px] font-semibold text-white leading-tight">
-              Latest <span className="font-serif italic text-white/60">Work</span>.
+            <h2 className="text-[36px] md:text-[48px] font-semibold text-primary-text leading-tight">
+              Latest <span className="font-serif italic text-muted-text">Work</span>.
             </h2>
-            <p className="text-[14px] text-white/40 mt-2">A selection of what I've built recently.</p>
+            <p className="text-[14px] text-muted-text mt-2">A selection of what I've built recently.</p>
           </div>
           <a 
             href="https://github.com/VibhuSuneja" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-[13px] text-white/40 hover:text-white/80 transition-colors flex items-center gap-2 group mb-2"
+            className="text-[13px] text-secondary-text hover:text-accent transition-colors flex items-center gap-2 group mb-2"
           >
             See All on GitHub <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
@@ -74,21 +74,21 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-[#0f0f0f] border border-white/5 rounded-[24px] p-8 h-full flex flex-col transition-all duration-500 hover:border-[#c8f564]/30 hover:bg-[#121212] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#c8f564]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="bg-surface border border-border-subtle rounded-[24px] p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/30 hover:bg-card relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="flex items-center justify-between mb-6 relative z-10">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-white/20">{project.id} // Project</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-text">{project.id} // Project</span>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 2).map(tag => (
-                      <span key={tag} className="font-mono text-[9px] text-white/40 bg-white/5 border border-white/8 px-2 py-1 rounded-md uppercase tracking-wider">
+                      <span key={tag} className="font-mono text-[9px] text-secondary-text bg-secondary/50 border border-border-subtle px-2 py-1 rounded-md uppercase tracking-wider">
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] mb-8 bg-[#161616] border border-white/5 group-hover:border-white/10 transition-colors z-10">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] mb-8 bg-secondary/50 border border-border-subtle group-hover:border-accent/20 transition-colors z-10">
                   <Image 
                     src={project.image}
                     alt={project.title}
@@ -99,14 +99,14 @@ const Projects = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col flex-grow">
-                  <h3 className="text-[24px] font-semibold text-white mb-2 tracking-tight group-hover:text-[#c8f564] transition-colors">{project.title}</h3>
-                  <p className="text-[14px] text-white/40 mb-4 font-medium italic font-serif opacity-80">{project.subtitle}</p>
-                  <p className="text-[14px] text-white/50 leading-relaxed mb-8 flex-grow">{project.description}</p>
+                  <h3 className="text-[24px] font-semibold text-primary-text mb-2 tracking-tight group-hover:text-accent transition-colors">{project.title}</h3>
+                  <p className="text-[14px] text-secondary-text mb-4 font-medium italic font-serif">{project.subtitle}</p>
+                  <p className="text-[14px] text-secondary-text leading-relaxed mb-8 flex-grow">{project.description}</p>
                   
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-col gap-1">
-                      <span className="text-[10px] text-white/20 font-mono uppercase tracking-tight">Focus</span>
-                      <span className="text-[12px] text-[#c8f564] font-medium tracking-tight">
+                      <span className="text-[10px] text-muted-text font-mono uppercase tracking-tight">Focus</span>
+                      <span className="text-[12px] text-accent font-medium tracking-tight">
                         {project.highlight}
                       </span>
                     </div>
@@ -114,7 +114,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/30 hover:bg-[#c8f564] hover:text-[#080808] transition-all duration-300 group/btn"
+                      className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-secondary-text hover:bg-accent hover:text-accent-foreground transition-all duration-300 group/btn"
                     >
                       <ArrowUpRight size={18} className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </a>

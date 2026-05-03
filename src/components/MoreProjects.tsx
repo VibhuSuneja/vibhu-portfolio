@@ -1,11 +1,10 @@
-"use client";
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Music, Landmark, Gamepad2, Brain, Shield, Eye, Bot, Code, Users, Briefcase, Trophy } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Music, Landmark, Gamepad2, Brain, Shield, Eye, Bot, Code, Users, Briefcase, Trophy, ChevronDown } from 'lucide-react';
 import { GitHubIcon } from '@/components/Icons';
 
 const moreProjects = [
+  // ... (keeping existing projects)
   {
     title: "Spotify Clone",
     description: "Responsive React frontend with playlist management and smooth transitions.",
@@ -107,58 +106,81 @@ const moreProjects = [
 ];
 
 const MoreProjects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? moreProjects : moreProjects.slice(0, 8);
+
   return (
-    <section className="py-20 px-6 md:px-16 border-t border-white/5">
+    <section className="py-20 px-6 md:px-16 border-t border-border-subtle bg-background">
       <div className="container mx-auto">
         <div className="mb-12">
-          <h2 className="text-[24px] font-semibold text-white/90">
-            More <span className="text-white/40">Projects</span>
+          <h2 className="text-[24px] font-semibold text-primary-text">
+            More <span className="text-muted-text">Projects</span>
           </h2>
-          <p className="text-[13px] text-white/30 mt-1">Minor builds & architectural experiments.</p>
+          <p className="text-[13px] text-muted-text mt-1">Minor builds & architectural experiments.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {moreProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="bg-[#0f0f0f] border border-white/5 p-6 rounded-[20px] hover:border-[#c8f564]/20 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
-                <div className="absolute inset-0 bg-[#c8f564]/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="flex items-center justify-between mb-6 relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-[#c8f564]/10 group-hover:border-[#c8f564]/20 transition-all duration-500">
-                    {project.icon}
+          <AnimatePresence>
+            {displayedProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="bg-surface border border-border-default p-6 rounded-[20px] hover:border-accent/20 transition-all duration-300 h-full flex flex-col relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-accent/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="flex items-center justify-between mb-6 relative z-10">
+                    <div className="w-10 h-10 rounded-xl bg-secondary/50 border border-border-subtle flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-500">
+                      {project.icon}
+                    </div>
+                    <div className="flex gap-4">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-text hover:text-accent transition-colors">
+                        <GitHubIcon size={16} />
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex gap-4">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
-                      <GitHubIcon size={16} />
-                    </a>
+
+                  <div className="relative z-10 flex flex-col flex-grow">
+                    <h3 className="text-[16px] font-semibold text-primary-text mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
+                    <p className="text-[13px] text-secondary-text leading-relaxed mb-6 flex-grow">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-[9px] font-mono text-muted-text px-2 py-1 bg-secondary/50 border border-border-subtle rounded-md uppercase tracking-wider">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                <div className="relative z-10 flex flex-col flex-grow">
-                  <h3 className="text-[16px] font-semibold text-white mb-2 group-hover:text-[#c8f564] transition-colors">{project.title}</h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[9px] font-mono text-white/30 px-2 py-1 bg-white/5 border border-white/5 rounded-md uppercase tracking-wider">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {moreProjects.length > 8 && (
+          <div className="mt-12 flex justify-center">
+            <button 
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 border border-border-default rounded-full text-[13px] text-secondary-text hover:text-accent hover:border-accent/30 transition-all group flex items-center gap-2"
+            >
+              {showAll ? 'Show Less' : `Show All (${moreProjects.length})`}
+              <motion.div
+                animate={{ rotate: showAll ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown size={14} />
+              </motion.div>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

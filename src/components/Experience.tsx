@@ -70,14 +70,14 @@ const Experience = () => {
       <div className="container mx-auto">
         <div className="mb-16">
           <SectionLabel text="Experience" />
-          <h2 className="text-[36px] md:text-[48px] font-semibold text-white leading-tight">
-            Professional <span className="font-serif italic text-white/60">Timeline</span>.
+          <h2 className="text-[36px] md:text-[48px] font-semibold text-primary-text leading-tight">
+            Professional <span className="font-serif italic text-secondary-text/60">Timeline</span>.
           </h2>
         </div>
 
         <div className="flex flex-col relative">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-0 md:left-[11.5%] top-0 bottom-0 w-[1px] bg-gradient-to-b from-[#c8f564]/30 via-white/5 to-transparent hidden md:block" />
+          <div className="absolute left-[20px] md:left-[11.5%] top-0 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 via-border-default to-transparent z-0" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -89,22 +89,22 @@ const Experience = () => {
               className="flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-12 group pb-16 relative"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-[11.5%] top-[6px] -translate-x-1/2 w-2 h-2 rounded-full bg-[#c8f564] shadow-[0_0_10px_rgba(200,245,100,0.5)] hidden md:block z-10" />
+              <div className="absolute left-[20px] md:left-[11.5%] top-[8px] md:top-[6px] -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_12px_rgba(var(--accent-rgb),0.4)] z-10 border-2 border-background" />
 
-              <div className="md:col-span-3 text-white/20 font-mono text-[12px] uppercase tracking-widest pt-1">
+              <div className="pl-12 md:pl-0 md:col-span-3 text-muted-text font-mono text-[12px] uppercase tracking-widest pt-1">
                 {exp.period}
               </div>
-              <div className="md:col-span-9">
+              <div className="pl-12 md:pl-0 md:col-span-9">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                   <div className="flex flex-col">
-                    <h3 className="text-[22px] font-semibold text-white tracking-tight group-hover:text-[#c8f564] transition-colors">{exp.role}</h3>
-                    <p className="text-[14px] text-white/40 mt-1 font-medium">{exp.company}</p>
+                    <h3 className="text-[22px] font-semibold text-primary-text tracking-tight group-hover:text-accent transition-colors">{exp.role}</h3>
+                    <p className="text-[14px] text-secondary-text mt-1 font-medium">{exp.company}</p>
                   </div>
-                  <span className="text-[10px] font-mono text-[#c8f564] uppercase tracking-[0.2em] bg-[#c8f564]/5 border border-[#c8f564]/10 px-4 py-1.5 rounded-full w-fit mt-4 md:mt-0 shadow-sm">
+                  <span className="text-[10px] font-mono text-accent uppercase tracking-[0.2em] bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full w-fit mt-4 md:mt-0 shadow-sm">
                     {exp.highlight}
                   </span>
                 </div>
-                <p className="text-[15px] text-white/50 leading-relaxed max-w-[750px] font-light">
+                <p className="text-[15px] text-secondary-text leading-relaxed max-w-[750px] font-light">
                   {exp.description}
                 </p>
               </div>

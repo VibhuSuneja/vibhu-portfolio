@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   keywords: ["MERN Stack", "Next.js", "AI Development", "Agentic RAG", "Full Stack Developer", "Vibhu Suneja"],
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sora.variable} ${dmSerif.variable} ${dmMono.variable} antialiased bg-[#080808] text-[#d4d4d4]`}
+        className={`${sora.variable} ${dmSerif.variable} ${dmMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
