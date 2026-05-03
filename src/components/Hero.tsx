@@ -28,7 +28,7 @@ const Hero = () => {
   } as const;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0 bg-background">
       {/* Background Effects */}
       <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 noise opacity-[0.03] dark:opacity-[0.03] light:opacity-[0.01]" />
@@ -108,7 +108,7 @@ const Hero = () => {
             <div className="bg-surface border border-border-default rounded-[32px] p-4 group shadow-2xl shadow-accent/5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-secondary">
                 <Image 
-                  src="/images/profile.jpg?v=2"
+                  src="/images/profile.jpg"
                   alt="Vibhu Suneja"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"

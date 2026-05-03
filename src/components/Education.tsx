@@ -31,12 +31,12 @@ const education = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-6 md:px-16 bg-[#0a0a0a]">
+    <section id="education" className="py-24 px-6 md:px-16 bg-background">
       <div className="container mx-auto">
         <div className="mb-16">
           <SectionLabel text="Academic" />
-          <h2 className="text-[36px] md:text-[48px] font-semibold text-white leading-tight">
-            Education <span className="font-serif italic text-white/60">Background</span>.
+          <h2 className="text-[36px] md:text-[48px] font-semibold text-primary-text leading-tight">
+            Education <span className="font-serif italic opacity-60">Background</span>.
           </h2>
         </div>
 
@@ -48,27 +48,27 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-[#111] border border-white/5 p-8 rounded-[32px] hover:border-[#c8f564]/20 transition-all duration-500"
+              className="group bg-surface border border-border-default p-8 rounded-[32px] hover:border-accent/20 transition-all duration-500"
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-[#c8f564]/10 transition-colors duration-500">
+                <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center group-hover:bg-accent/10 transition-colors duration-500">
                   {edu.icon}
                 </div>
-                <span className="text-[#c8f564] font-mono text-[10px] uppercase tracking-widest pt-2">
+                <span className="text-accent font-mono text-[10px] uppercase tracking-widest pt-2">
                   {edu.period}
                 </span>
               </div>
 
               <div className="mb-4">
-                <h3 className="text-[20px] font-semibold text-white mb-1 group-hover:text-[#c8f564] transition-colors">
+                <h3 className="text-[20px] font-semibold text-primary-text mb-1 group-hover:text-accent transition-colors">
                   {edu.degree}
                 </h3>
-                <p className="text-white/40 text-[14px]">
+                <p className="text-secondary-text text-[14px]">
                   {edu.institution}
                 </p>
               </div>
 
-              <p className="text-[13px] text-white/50 leading-relaxed max-w-[400px]">
+              <p className="text-[13px] text-secondary-text/80 leading-relaxed max-w-[400px]">
                 {edu.details}
               </p>
             </motion.div>

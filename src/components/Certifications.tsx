@@ -52,12 +52,12 @@ const certs = [
 
 const Certifications = () => {
   return (
-    <section className="py-24 px-6 md:px-16">
+    <section className="py-24 px-6 md:px-16 bg-background">
       <div className="container mx-auto">
         <div className="mb-16 text-center md:text-left">
           <SectionLabel text="Recognition" />
-          <h2 className="text-[36px] md:text-[48px] font-semibold text-[#f0f0f0] tracking-tight">
-            Honors & <span className="font-serif italic text-white/60">Awards</span>.
+          <h2 className="text-[36px] md:text-[48px] font-semibold text-primary-text tracking-tight">
+            Honors & <span className="font-serif italic opacity-60">Awards</span>.
           </h2>
         </div>
 
@@ -70,16 +70,15 @@ const Certifications = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-[#111] border border-white/8 p-6 rounded-[24px] group hover:border-[#c8f564]/20 transition-all duration-300"
-              style={{ backgroundColor: cert.color }}
+              className="bg-surface border border-border-default p-6 rounded-[24px] group hover:border-accent/20 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:rotate-[10deg] border border-white/5">
+              <div className="w-12 h-12 bg-secondary rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:rotate-[10deg] border border-border-subtle">
                 {cert.icon}
               </div>
-              <h3 className="text-[17px] font-semibold text-white/90 mb-1 leading-snug">
+              <h3 className="text-[17px] font-semibold text-primary-text mb-1 leading-snug">
                 {cert.title}
               </h3>
-              <p className="text-[13px] text-white/40">
+              <p className="text-[13px] text-secondary-text">
                 {cert.issuer}
               </p>
             </motion.div>

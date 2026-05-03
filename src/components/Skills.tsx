@@ -20,14 +20,14 @@ const categories = [
 ];
 
 const SkillMarquee = ({ items, direction }: { items: string[], direction: 'left' | 'right' }) => (
-  <div className="relative flex overflow-x-hidden border-y border-white/5 py-4">
+  <div className="relative flex overflow-x-hidden border-y border-border-subtle py-4">
     <div className={direction === 'left' ? 'marquee-left' : 'marquee-right'}>
       {[...items, ...items, ...items, ...items].map((item, i) => (
         <div 
           key={i}
-          className="mx-4 flex items-center gap-3 px-6 py-3 bg-[#111] border border-white/5 rounded-2xl text-[14px] font-mono text-white/40 hover:text-[#c8f564] hover:border-[#c8f564]/30 transition-all duration-300 cursor-default group"
+          className="mx-4 flex items-center gap-3 px-6 py-3 bg-secondary border border-border-subtle rounded-2xl text-[14px] font-mono text-secondary-text hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-default group"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-[#c8f564] transition-colors"></span>
+          <span className="w-1.5 h-1.5 rounded-full bg-border-default group-hover:bg-accent transition-colors"></span>
           {item}
         </div>
       ))}
@@ -37,13 +37,13 @@ const SkillMarquee = ({ items, direction }: { items: string[], direction: 'left'
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-32 bg-[#080808] overflow-hidden">
+    <section id="skills" className="py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-16 mb-20">
         <SectionLabel text="Skills" />
-        <h2 className="text-[38px] md:text-[52px] font-semibold text-[#f0f0f0] tracking-tight">
-          Technical <span className="font-serif italic text-white/60">Arsenal</span>.
+        <h2 className="text-[38px] md:text-[52px] font-semibold text-primary-text tracking-tight">
+          Technical <span className="font-serif italic opacity-60">Arsenal</span>.
         </h2>
-        <p className="text-[14px] text-white/30 mt-4 max-w-[400px]">
+        <p className="text-[14px] text-secondary-text mt-4 max-w-[400px]">
           Bridging the gap between raw code and premium user experiences with modern tech.
         </p>
       </div>
@@ -65,11 +65,11 @@ const Skills = () => {
             className="flex flex-col"
           >
             <div className="flex items-center gap-2 mb-4">
-               <span className="text-[10px] font-mono text-white/20">0{i+1}</span>
-               <div className="h-[1px] flex-grow bg-white/5"></div>
+               <span className="text-[10px] font-mono opacity-20">0{i+1}</span>
+               <div className="h-[1px] flex-grow bg-border-subtle"></div>
             </div>
-            <h4 className="text-[14px] font-medium text-white/90 mb-3 tracking-tight">{cat.name}</h4>
-            <p className="text-[13px] text-white/40 leading-relaxed">{cat.skills}</p>
+            <h4 className="text-[14px] font-medium text-primary-text mb-3 tracking-tight">{cat.name}</h4>
+            <p className="text-[13px] text-secondary-text leading-relaxed">{cat.skills}</p>
           </motion.div>
         ))}
       </div>
