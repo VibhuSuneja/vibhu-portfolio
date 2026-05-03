@@ -108,9 +108,10 @@ const Hero = () => {
             <div className="bg-[#111] border border-white/5 rounded-[32px] p-4 group">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-[#1a1a1a]">
                 <Image 
-                  src="/images/profile.jpg"
+                  src="/images/profile.jpg?v=2"
                   alt="Vibhu Suneja"
                   fill
+                  sizes="(max-width: 768px) 100vw, 400px"
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                   priority
                 />

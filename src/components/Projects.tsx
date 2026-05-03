@@ -15,7 +15,7 @@ const projects = [
     description: "Advanced force-directed graph visualizing 104+ divine entities and their complex relationships across the four Yugas. Features agentic RAG search for deep theological insights and cosmic epoch filtering.",
     highlight: "104 Entities · Agentic Search",
     github: "https://github.com/VibhuSuneja/devlok",
-    image: "/images/devlok-v3.png",
+    image: "/images/devlok-v3.png?v=4",
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     description: "Hyper-local millet marketplace with intelligent crop analysis and real-time trade negotiations. End-to-end supply chain logic with dynamic farmer listings.",
     highlight: "Real-time · AI-Integrated",
     github: "https://github.com/VibhuSuneja/Agrowcart",
-    image: "/images/agrowcart-v3.png",
+    image: "/images/agrowcart-v3.png?v=4",
     color: "rgba(100, 245, 150, 0.05)"
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     description: "Production-hardened platform with AI content discovery and social gamification (XP/Leaderboards). Validated with 40 students. Enterprise-grade security.",
     highlight: "40 Students · XP Gamification",
     github: "https://github.com/VibhuSuneja/LearningManagement_system-",
-    image: "/images/learning-ecosystem-v4.png",
+    image: "/images/learning-ecosystem-v4.png?v=4",
     color: "rgba(100, 150, 245, 0.05)"
   }
 ];
@@ -93,6 +93,7 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                 </div>

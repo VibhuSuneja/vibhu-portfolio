@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, Palette, Briefcase, Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Users, Award, Palette, Briefcase, ArrowUpRight } from 'lucide-react';
 import { InstagramIcon, LinkedInIcon } from './Icons';
 
 const leadershipData = [
