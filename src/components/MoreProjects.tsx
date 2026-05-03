@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Music, Landmark, Gamepad2, Brain, Shield, Eye, Bot, Code, Users, Briefcase, Trophy, ChevronDown } from 'lucide-react';
