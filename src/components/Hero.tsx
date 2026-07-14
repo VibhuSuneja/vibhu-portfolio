@@ -129,7 +129,7 @@ const Hero = () => {
                   <span className="text-[11px] text-muted-text">MERN Specialist</span>
                 </div>
                 <div className="text-[12px] text-secondary-text leading-relaxed">
-                  Focusing on Full-Stack Scalability & AI Engineering. Currently based in Punjab, India.
+                  Focusing on Full-Stack Scalability & AI Engineering. Currently based in Kurukshetra, Haryana, India.
                 </div>
               </div>
             </div>

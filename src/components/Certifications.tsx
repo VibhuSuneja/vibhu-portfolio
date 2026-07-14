@@ -7,44 +7,62 @@ import { Trophy, Code, Star, Award, Shield, Users } from 'lucide-react';
 
 const certs = [
   {
+    title: "Full Stack Web Development",
+    issuer: "Internshala (2025)",
+    icon: <Code className="text-[#c8f564]" />,
+    color: "rgba(200, 245, 100, 0.05)"
+  },
+  {
+    title: "Cybersecurity",
+    issuer: "Pregrad (2024)",
+    icon: <Shield className="text-[#c8f564]" />,
+    color: "rgba(200, 245, 100, 0.05)"
+  },
+  {
+    title: "Artificial Intelligence",
+    issuer: "NPTEL IIT Madras (2023)",
+    icon: <Award className="text-[#c8f564]" />,
+    color: "rgba(200, 245, 100, 0.05)"
+  },
+  {
+    title: "C++ & OOPs",
+    issuer: "OOPS Institute of Computer Technology (2024)",
+    icon: <Code className="text-[#c8f564]" />,
+    color: "rgba(200, 245, 100, 0.05)"
+  },
+  {
     title: "Smart India Hackathon 2025",
-    issuer: "Tech Lead & Participant (Rural Connect)",
+    issuer: "Team Lead — Rural Connect",
     icon: <Trophy className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
     title: "Smart India Hackathon 2023",
     issuer: "Team Lead & Participant",
-    icon: <Code className="text-[#c8f564]" />,
+    icon: <Trophy className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
-    title: "DPHB & ISRO Hackathons",
-    issuer: "DPHB Round 2 Participant & ISRO Participant",
+    title: "DPHB Hackathon",
+    issuer: "Qualified Round 2",
     icon: <Star className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
-    title: "Professional Fiesta 2024",
-    issuer: "Event Coordinator - JMIT",
+    title: "ISRO Bharatiya Antriksh Hackathon",
+    issuer: "Participant",
     icon: <Star className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
-    title: "Cyber Security Workshop",
-    issuer: "Advanced Training Participant",
-    icon: <Shield className="text-[#c8f564]" />,
-    color: "rgba(200, 245, 100, 0.05)"
-  },
-  {
-    title: "Soft Skills & Personality",
+    title: "Soft Skills & Personality Development",
     issuer: "NPTEL Certified (Elite)",
     icon: <Award className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
     title: "Blood Donation Drive",
-    issuer: "Coordinator & Organizer",
+    issuer: "Coordinator & Organizer — JMIT",
     icon: <Users className="text-[#c8f564]" />,
     color: "rgba(200, 245, 100, 0.05)"
   }
@@ -57,11 +75,11 @@ const Certifications = () => {
         <div className="mb-16 text-center md:text-left">
           <SectionLabel text="Recognition" />
           <h2 className="text-[36px] md:text-[48px] font-semibold text-primary-text tracking-tight">
-            Honors & <span className="font-serif italic opacity-60">Awards</span>.
+            Training & <span className="font-serif italic opacity-60">Achievements</span>.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {certs.map((cert, index) => (
             <motion.div
               key={cert.title}

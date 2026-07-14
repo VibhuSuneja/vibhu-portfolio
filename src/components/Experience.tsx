@@ -6,6 +6,20 @@ import { SectionLabel } from './ui/SectionLabel';
 
 const experiences = [
   {
+    period: "Jun 2026 — Jul 2026",
+    role: "Full Stack Web Development Intern",
+    company: "HawksCode (EasyShiksha)",
+    description: "Architected and developed a Multi-Agent AI Platform using the MERN stack. Implemented autonomous agent logic to handle complex backend workflows and database-driven task management. Collaborated with industry mentors to ensure scalable code architecture and optimal API performance.",
+    highlight: "Multi-Agent AI"
+  },
+  {
+    period: "Feb 2026 — Jun 2026",
+    role: "Placement Readiness Mentor",
+    company: "JMIT",
+    description: "Mentored peers by reviewing and optimizing resumes to align with industry standards and ATS requirements. Provided strategic guidance on crafting impactful video introductions to enhance campus placement prospects.",
+    highlight: "Mentorship"
+  },
+  {
     period: "Jan 2026 — Present",
     role: "Lead Developer",
     company: "AgrowCart (AI Marketplace)",
@@ -20,36 +34,28 @@ const experiences = [
     highlight: "SIH 2025"
   },
   {
-    period: "Oct 2024 — Present",
-    role: "NIDU Researcher",
-    company: "NIDU Research",
-    description: "Authored a featured research article on renewable energy and climate technology. Conducted market research on sustainable agricultural startups in India and managed editorial workflows.",
+    period: "Jul 2025 — May 2026",
+    role: "Researcher & Content Author",
+    company: "Net Impact Delhi University (NIDU)",
+    description: "Contributed research reports on renewable energy trends and sustainability initiatives. Authored featured articles on climate technology and sustainable agricultural startups in India.",
     highlight: "NIDU Research"
   },
   {
-    period: "2023 — May 2026",
-    role: "Coordinator",
-    company: "Highfliers Club, JMIT",
-    description: "Spearheaded multimedia projects including MUN-23 event video production. Managed creative workshops combining technology and artistic expression.",
+    period: "Aug 2023 — Mar 2026",
+    role: "Club Coordinator",
+    company: "Highfliers & Creative Fingers, JMIT",
+    description: "Organized technical workshops, coding activities, and multimedia events. Mentored 15+ peers on Git/GitHub workflows and collaborated on team-based technical projects.",
     highlight: "Leadership"
   },
   {
-    period: "Aug 2025 — March 2026",
-    role: "Coordinator",
-    company: "Creative Fingers Club, JMIT",
-    description: "Organized coding workshops, hackathons, and professional development events. Mentored 15+ students in web development and career guidance.",
-    highlight: "Mentorship"
-  },
-
-  {
-    period: "July — Aug 2025",
+    period: "Jul — Aug 2025",
     role: "Full Stack Web Dev Intern",
     company: "Internshala Industrial Training",
     description: "Built production-ready MERN applications with secure payment gateways. Optimized database queries and achieved 100% score in assessment.",
     highlight: "MERN"
   },
   {
-    period: "July — Aug 2024",
+    period: "Jul — Aug 2024",
     role: "C++ & OOPs Trainee",
     company: "OOPS Institute of Computer Technology",
     description: "Developed a Banking Management System using advanced C++ logic. Mastered data structures and pointer-based memory management.",
