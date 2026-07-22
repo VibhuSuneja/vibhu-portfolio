@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ui/ThemeToggle';
+import { Logo } from './ui/Logo';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -68,9 +69,7 @@ const Navbar = () => {
       }`}
     >
       {/* Left: Brand */}
-      <div className="font-mono text-[15px] text-secondary-text font-medium tracking-tighter">
-        VS.
-      </div>
+      <Logo size="sm" />
 
       {/* Center: Nav Links (Desktop) */}
       <div className="hidden md:flex items-center gap-8">
