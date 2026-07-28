@@ -6,6 +6,13 @@ import { SectionLabel } from './ui/SectionLabel';
 
 const experiences = [
   {
+    period: "Jul 2026 — Present",
+    role: "Full Stack Development Intern",
+    company: "Elevance Skills",
+    description: "Architecting and developing full-stack web applications and AI-driven solutions. Collaborating on modern frontend & backend architectures, optimizing API integrations, and engineering high-performance user experiences.",
+    highlight: "Full Stack & AI"
+  },
+  {
     period: "Jun 2026 — Jul 2026",
     role: "Full Stack Web Development Intern",
     company: "HawksCode (EasyShiksha)",
