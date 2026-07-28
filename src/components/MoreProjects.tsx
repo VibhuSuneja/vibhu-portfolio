@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Music, Landmark, Gamepad2, Brain, Shield, Eye, Bot, Code, Users, Briefcase, Trophy, ChevronDown, Star } from 'lucide-react';
+import { Music, Landmark, Gamepad2, Brain, Bot, Trophy, ChevronDown, Star, Code, Shield } from 'lucide-react';
 import { GitHubIcon } from '@/components/Icons';
 import { useGitHubData } from '@/hooks/useGitHubData';
 
@@ -29,20 +29,6 @@ const moreProjects = [
     tags: ["Next.js", "AI"]
   },
   {
-    title: "GigVerify",
-    description: "Trust-based freelancing infrastructure with milestone enforcement.",
-    icon: <Shield size={18} className="text-[#c8f564]" />,
-    github: "https://github.com/VibhuSuneja/gigverify-trusted-freelancing",
-    tags: ["MERN", "Trust"]
-  },
-  {
-    title: "Focus Killer",
-    description: "AI-driven activity detector to minimize distractions during work sessions.",
-    icon: <Eye size={18} className="text-red-400" />,
-    github: "https://github.com/VibhuSuneja/focus-killer-detector",
-    tags: ["AI", "Vision"]
-  },
-  {
     title: "Virtual Assistant",
     description: "Voice-activated personal assistant for workflow automation.",
     icon: <Bot size={18} className="text-cyan-400" />,
@@ -57,20 +43,6 @@ const moreProjects = [
     tags: ["AI", "Logic"]
   },
   {
-    title: "AIML Workshop",
-    description: "Curated resources and code samples from AI/ML training sessions.",
-    icon: <Code size={18} className="text-green-400" />,
-    github: "https://github.com/VibhuSuneja/AIML-workshop",
-    tags: ["Education", "ML"]
-  },
-  {
-    title: "Faculty Mgmt",
-    description: "System for managing academic staff and administrative records.",
-    icon: <Users size={18} className="text-yellow-400" />,
-    github: "https://github.com/VibhuSuneja/faculty_management_system",
-    tags: ["Management", "DB"]
-  },
-  {
     title: "Rural Connect",
     description: "Tech Lead for SIH 2025 project. Bridging communication gaps in rural areas through intelligent resource networking and community hubs.",
     icon: <Trophy size={18} className="text-[#c8f564]" />,
@@ -83,13 +55,6 @@ const moreProjects = [
     icon: <Shield size={18} className="text-gray-400" />,
     github: "https://github.com/VibhuSuneja/Shunya",
     tags: ["Architecture", "Logic"]
-  },
-  {
-    title: "Placement Prep",
-    description: "Comprehensive hub for interview prep and placement resources.",
-    icon: <Briefcase size={18} className="text-indigo-400" />,
-    github: "https://github.com/VibhuSuneja/PLACEMENT-PREPRATION",
-    tags: ["Resources", "Career"]
   },
   {
     title: "Simon Says",
@@ -109,8 +74,15 @@ const moreProjects = [
 
 const MoreProjects = () => {
   const [showAll, setShowAll] = useState(false);
-  const { getRepoStats } = useGitHubData();
-  const displayedProjects = showAll ? moreProjects : moreProjects.slice(0, 8);
+  const { data, getRepoStats } = useGitHubData();
+
+  // Dynamically filter to ensure ONLY public repositories exist in the UI
+  const publicProjects = useMemo(() => {
+    if (!data || !data.repos) return moreProjects;
+    return moreProjects.filter((project) => getRepoStats(project.github) !== null);
+  }, [data, getRepoStats]);
+
+  const displayedProjects = showAll ? publicProjects : publicProjects.slice(0, 8);
 
   return (
     <section className="py-20 px-6 md:px-16 border-t border-border-subtle bg-background">
@@ -120,7 +92,7 @@ const MoreProjects = () => {
             <h2 className="text-[24px] font-semibold text-primary-text">
               More <span className="text-muted-text">Projects</span>
             </h2>
-            <p className="text-[13px] text-muted-text mt-1">Minor builds & architectural experiments with live GitHub metrics.</p>
+            <p className="text-[13px] text-muted-text mt-1">Public open-source builds & architectural experiments synced with GitHub API.</p>
           </div>
         </div>
 
@@ -180,13 +152,13 @@ const MoreProjects = () => {
           </AnimatePresence>
         </div>
 
-        {moreProjects.length > 8 && (
+        {publicProjects.length > 8 && (
           <div className="mt-12 flex justify-center">
             <button 
               onClick={() => setShowAll(!showAll)}
               className="px-8 py-3 border border-border-default rounded-full text-[13px] text-secondary-text hover:text-accent hover:border-accent/30 transition-all group flex items-center gap-2"
             >
-              {showAll ? 'Show Less' : `Show All (${moreProjects.length})`}
+              {showAll ? 'Show Less' : `Show All (${publicProjects.length})`}
               <motion.div
                 animate={{ rotate: showAll ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
