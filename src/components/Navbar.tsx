@@ -6,6 +6,14 @@ import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ui/ThemeToggle';
 import { Logo } from './ui/Logo';
 
+const navLinks = [
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
+  { name: 'Leadership', href: '#leadership' },
+  { name: 'Contact', href: '#contact' },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,12 +27,6 @@ const Navbar = () => {
     
     // Intersection Observer for active section
     const sections = navLinks.map(link => link.href.substring(1));
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
-    };
-
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
@@ -48,14 +50,6 @@ const Navbar = () => {
       observer.disconnect();
     };
   }, []);
-
-  const navLinks = [
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Leadership', href: '#leadership' },
-    { name: 'Contact', href: '#contact' },
-  ];
 
   return (
     <motion.nav

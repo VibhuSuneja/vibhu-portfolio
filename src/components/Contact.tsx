@@ -27,7 +27,7 @@ const Contact = () => {
           </div>
           
           <h2 className="text-[36px] md:text-[64px] lg:text-[72px] font-semibold text-primary-text leading-[1.1] mb-16 tracking-tight">
-            Let's build something <br />
+            Let&apos;s build something <br />
             <span className="font-serif italic text-secondary-text/30 hover:text-accent/60 transition-colors duration-700 cursor-default">extraordinary</span> together.
           </h2>
 
