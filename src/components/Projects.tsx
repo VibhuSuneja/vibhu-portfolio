@@ -10,6 +10,17 @@ import { useGitHubData } from '@/hooks/useGitHubData';
 const projects = [
   {
     id: "01",
+    title: "Assistance AI",
+    subtitle: "Multi-Agent AI Platform",
+    tags: ["Next.js", "Gemini AI", "TypeScript", "Multi-Agent", "RAG"],
+    description: "Production-grade multi-agent platform orchestrating autonomous agentic workflows, contextual reasoning, and intelligent task automation.",
+    highlight: "Multi-Agent · Autonomous Workflows",
+    github: "https://github.com/VibhuSuneja/assistance-ai",
+    image: "/images/assistance-ai.png",
+    color: "rgba(180, 100, 245, 0.05)"
+  },
+  {
+    id: "02",
     title: "Devlok",
     subtitle: "Interactive Mythology Knowledge Graph",
     tags: ["React", "D3.js", "MongoDB", "Gemini AI", "JWT"],
@@ -20,7 +31,7 @@ const projects = [
     color: "rgba(200, 245, 100, 0.05)"
   },
   {
-    id: "02",
+    id: "03",
     title: "AgrowCart",
     subtitle: "AI-Powered Hyper-Local Marketplace",
     tags: ["Next.js 15", "Gemini AI", "Socket.io", "MongoDB"],
@@ -31,7 +42,7 @@ const projects = [
     color: "rgba(100, 245, 150, 0.05)"
   },
   {
-    id: "03",
+    id: "04",
     title: "AI Learning Ecosystem",
     subtitle: "Educational Platform",
     tags: ["MERN", "Gemini AI", "Vercel Edge", "GDPR"],
@@ -76,7 +87,7 @@ const Projects = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => {
             const repoStats = getRepoStats(project.github);
 
@@ -95,7 +106,7 @@ const Projects = () => {
                   <div className="flex items-center justify-between mb-6 relative z-10">
                     <span className="font-mono text-[10px] uppercase tracking-widest text-muted-text">{`${project.id} // Project`}</span>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 2).map(tag => (
+                      {project.tags.slice(0, 3).map(tag => (
                         <span key={tag} className="font-mono text-[9px] text-secondary-text bg-secondary/50 border border-border-subtle px-2 py-1 rounded-md uppercase tracking-wider">
                           {tag}
                         </span>
@@ -108,7 +119,7 @@ const Projects = () => {
                       src={project.image}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     />
                   </div>
