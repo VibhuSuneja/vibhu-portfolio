@@ -2,11 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Play } from 'lucide-react';
+import { ArrowUpRight, Play, Star } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon, YouTubeIcon, InstagramIcon } from '@/components/Icons';
 import Image from 'next/image';
+import { useGitHubData } from '@/hooks/useGitHubData';
 
 const Hero = () => {
+  const { data: githubData } = useGitHubData();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,6 +29,9 @@ const Hero = () => {
       transition: { duration: 0.5, ease: "easeOut" },
     },
   } as const;
+
+  const totalRepos = githubData?.profile?.publicRepos ?? 25;
+  const totalStars = githubData?.profile?.totalStars ?? 45;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0 bg-background">
@@ -82,8 +88,12 @@ const Hero = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-center gap-6">
-            <a href="https://github.com/VibhuSuneja" target="_blank" rel="noopener noreferrer" className="text-muted-text hover:text-accent transition-colors" title="GitHub">
+            <a href="https://github.com/VibhuSuneja" target="_blank" rel="noopener noreferrer" className="text-muted-text hover:text-accent transition-colors flex items-center gap-2" title="GitHub Profile">
               <GitHubIcon size={20} />
+              <span className="text-[11px] font-mono text-muted-text hover:text-accent flex items-center gap-1.5 bg-secondary/30 px-2 py-0.5 rounded-full border border-border-subtle">
+                <Star size={11} className="text-amber-400 fill-amber-400/20" />
+                {totalStars} stars
+              </span>
             </a>
             <a href="https://www.linkedin.com/in/vibhusuneja08" target="_blank" rel="noopener noreferrer" className="text-muted-text hover:text-accent transition-colors" title="LinkedIn">
               <LinkedInIcon size={20} />
@@ -137,8 +147,13 @@ const Hero = () => {
             {/* Floating Elements */}
             <div className="absolute -bottom-6 -left-6 bg-surface/80 backdrop-blur-md border border-border-default p-4 rounded-2xl hidden lg:block">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-accent-foreground font-bold">15+</div>
-                <div className="text-[11px] text-secondary-text">Technical Projects <br />Completed</div>
+                <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-accent-foreground font-bold">
+                  {totalRepos}+
+                </div>
+                <div className="text-[11px] text-secondary-text leading-tight">
+                  Public Repos <br />
+                  <span className="text-muted-text font-mono text-[9.5px]">Real-time Sync</span>
+                </div>
               </div>
             </div>
           </div>
@@ -150,4 +165,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -7,7 +7,6 @@ import {
   X, 
   Send, 
   Sparkles, 
-  MessageCircle, 
   ExternalLink,
   RefreshCw,
   User
@@ -181,7 +180,7 @@ export const Chatbot = () => {
                 </div>
                 <div>
                   <h3 className="text-[14px] font-semibold text-primary-text flex items-center gap-2">
-                    Vibhu's AI Assistant
+                    Vibhu&apos;s AI Assistant
                     <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-accent/15 text-accent font-mono">ONLINE</span>
                   </h3>
                   <p className="text-[11px] text-muted-text">Instant Answers & Direct Contact</p>
